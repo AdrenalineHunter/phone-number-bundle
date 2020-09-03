@@ -49,7 +49,7 @@ class PhoneNumber extends Constraint
         @trigger_error(__METHOD__.' is deprecated and will be removed in 4.0. Use "getTypes" instead.', E_USER_DEPRECATED);
 
         $types = $this->getTypes();
-        if (0 === \count($types)) {
+        if (0 === count($types)) {
             return null;
         }
 
@@ -72,7 +72,7 @@ class PhoneNumber extends Constraint
         }
 
         $types = $this->getTypes();
-        if (1 === \count($types)) {
+        if (1 === count($types)) {
             $typeName = $this->getTypeName($types[0]);
 
             return "This value is not a valid $typeName.";
@@ -83,7 +83,7 @@ class PhoneNumber extends Constraint
 
     public function getTypeNames(): array
     {
-        $types = \is_array($this->type) ? $this->type : [$this->type];
+        $types = is_array($this->type) ? $this->type : [$this->type];
 
         $typeNames = [];
         foreach ($types as $type) {

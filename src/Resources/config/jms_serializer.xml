@@ -10,7 +10,7 @@
     </parameters>
 
     <services>
-        <service id="misd_phone_number.serializer.handler" class="Misd\PhoneNumberBundle\Serializer\Handler\PhoneNumberHandler">
+        <service id="Misd\PhoneNumberBundle\Serializer\Handler\PhoneNumberHandler" class="Misd\PhoneNumberBundle\Serializer\Handler\PhoneNumberHandler">
             <tag name="jms_serializer.handler" type="libphonenumber\PhoneNumber" direction="serialization"
                  format="json" method="serializePhoneNumber"/>
             <tag name="jms_serializer.handler" type="libphonenumber\PhoneNumber" direction="deserialization"
@@ -23,7 +23,6 @@
                  format="yml" method="serializePhoneNumber"/>
             <argument type="service" id="libphonenumber.phone_number_util"/>
         </service>
-        <service id="Misd\PhoneNumberBundle\Serializer\Handler\PhoneNumberHandler" alias="misd_phone_number.serializer.handler"/>
     </services>
 
 </container>
