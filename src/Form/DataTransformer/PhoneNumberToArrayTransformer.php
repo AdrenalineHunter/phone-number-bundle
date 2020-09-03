@@ -49,7 +49,7 @@ class PhoneNumberToArrayTransformer implements DataTransformerInterface
 
         $util = PhoneNumberUtil::getInstance();
 
-        if (false === \in_array($util->getRegionCodeForNumber($phoneNumber), $this->countryChoices)) {
+        if (false === in_array($util->getRegionCodeForNumber($phoneNumber), $this->countryChoices)) {
             throw new TransformationFailedException('Invalid country.');
         }
 
@@ -84,7 +84,7 @@ class PhoneNumberToArrayTransformer implements DataTransformerInterface
             throw new TransformationFailedException($e->getMessage(), $e->getCode(), $e);
         }
 
-        if (false === \in_array($util->getRegionCodeForNumber($phoneNumber), $this->countryChoices)) {
+        if (false === in_array($util->getRegionCodeForNumber($phoneNumber), $this->countryChoices)) {
             throw new TransformationFailedException('Invalid country.');
         }
 
