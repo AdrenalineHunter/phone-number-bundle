@@ -37,5 +37,8 @@ class MisdPhoneNumberExtension extends Extension
         if (interface_exists('Symfony\Component\Serializer\Normalizer\NormalizerInterface')) {
             $loader->load('serializer.xml');
         }
+        if (interface_exists('JMS\SerializerBundle\JMSSerializerBundle')) {
+            $loader->load('jms_serializer.xml');
+        }
     }
 }
