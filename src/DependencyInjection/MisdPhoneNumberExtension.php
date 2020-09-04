@@ -29,12 +29,10 @@ class MisdPhoneNumberExtension extends Extension
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        $loader->load('jms_serializer.xml');
 
         if (interface_exists('Symfony\Component\Templating\Helper\HelperInterface')) {
             $loader->load('templating.xml');
-            if (class_exists('Symfony\Bundle\TwigBundle\TwigBundle')) {
-                $loader->load('twig.xml');
-            }
         }
         if (class_exists('Symfony\Bundle\TwigBundle\TwigBundle')) {
             $loader->load('twig.xml');
@@ -44,9 +42,6 @@ class MisdPhoneNumberExtension extends Extension
         }
         if (interface_exists('Symfony\Component\Serializer\Normalizer\NormalizerInterface')) {
             $loader->load('serializer.xml');
-        }
-        if (interface_exists('JMS\SerializerBundle\JMSSerializerBundle')) {
-            $loader->load('jms_serializer.xml');
         }
 
         $this->setFactory($container->getDefinition('libphonenumber\PhoneNumberUtil'));
