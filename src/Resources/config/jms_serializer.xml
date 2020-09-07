@@ -16,7 +16,7 @@
                  format="xml" method="deserializePhoneNumberFromXml"/>
             <tag name="jms_serializer.handler" type="libphonenumber\PhoneNumber" direction="serialization"
                  format="yml" method="serializePhoneNumber"/>
-            <argument type="service" id="libphonenumber.phone_number_util"/>
+            <argument type="service" id="libphonenumber\PhoneNumberUtil"/>
         </service>
     </services>
 
